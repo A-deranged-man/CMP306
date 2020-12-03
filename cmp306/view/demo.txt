@@ -1,0 +1,2 @@
+<h1>CMP306 Dynamic Web Development 2</h1>
+<p id="p1">This is a cool module!!</p>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("demo.txt");
+  });
+});
+</script>
+</head>
+<body>
+
+<div id="div1">
+<h1>Let jQuery AJAX Change This Text</h1>
+<p>Code adapted from w3schools.com</p>
+</div>
+
+<button>Load New File</button>
+
+</body>
+</html>

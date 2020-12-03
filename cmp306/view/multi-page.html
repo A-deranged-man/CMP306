@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="utf-8">
+	<title>Multi Page Example</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script
+  src="https://code.jquery.com/jquery-1.11.1.min.js"
+  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
+  crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head> 
+<body> 
+
+<!-- First Page -->
+<div data-role="page" id="home" data-title="Home Page">
+	<div data-role="header">
+		<h1>Multi-Page Example</h1>
+	</div>
+
+	<div data-role="content">
+		<a href="#mobilephone" data-role="button">See my mobile number</a></br>	
+		<A href="#address" data-role="button">See my address</a>
+	</div>
+	
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer - Written by GRL</h4>
+	</div>
+</div>
+
+<!-- Second Page -->
+<div data-role="page" id="mobilephone" data-title="Mobile Phone">
+	<div data-role="header">
+		<h1>Multi-Page Example</h1>
+	</div>
+
+	<div data-role="content">
+		<h1>Mobile Number</h1>
+		<p>07770 123456 - you did not think I would give you my phone number</p>
+		<a href="#home" data-role="button">Back to home</a>
+	</div>
+	
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer - Written by GRL</h4>
+	</div>
+</div>
+
+<!-- Third Page -->
+<div data-role="page" id="address" data-title="Work Address">
+	<div data-role="header">
+		<h1>Multi-Page Example</h1>
+	</div>
+
+	<div data-role="content">
+		<h1>Work Address</h1>
+		<p>University of Abertay<br/>
+		   Bell Street<br/>
+		   Dundee<br/>
+		   DD1 1HG</p>
+		<a href="#home" data-role="button">Back to home</a>
+	</div>
+	
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer - Written by GRL</h4>
+	</div>
+</div>
+
+</body>
+</html>
+

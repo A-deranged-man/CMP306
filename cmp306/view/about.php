@@ -1,12 +1,12 @@
 <?php
-include("scripts/header.php");
+include("header.php");
 ?>
-    <div class="st-xlarge st-text-grey">
-        About
-    </div><br>
+<div class="st-xlarge st-text-grey">
+   About
+</div><br>
 
     <div class="st-row">
-        <h4 align="left">Introduction & Education</h4>
+    <h4 align="left">Introduction & Education</h4>
 
         <img src="images/headshot.jpeg" style="padding-left: 20px;" align="right" height="400" width="300"/>
         <p align="left">My interest began for computing in 2010. At this time I didn't know much about programming, but rather
@@ -20,14 +20,14 @@ include("scripts/header.php");
         </p>
         <br>
 
-        <h4 align="left">Progression</h4>
+    <h4 align="left">Progression</h4>
 
         <p align="left">After my education in Dumfries & Galloway College I began working as a Website Product Administrator for ETB Technologies Ltd.
-            Here I learned how to deploy content on a Magento 2 CMS and created multiple programs to improve the workflow for staff at ETB, such as automatic stock
-            sync programs built in Python 3, or data comparison programs for Microsoft Dynamics NAV.</p>
+        Here I learned how to deploy content on a Magento 2 CMS and created multiple programs to improve the workflow for staff at ETB, such as automatic stock
+        sync programs built in Python 3, or data comparison programs for Microsoft Dynamics NAV.</p>
         <br>
 
-        <h4 align="left">Current Day</h4>
+    <h4 align="left">Current Day</h4>
         <p align="left">Currently I am a student at Abertay, I am doing a BSc (Hons) Computing course with aims to achieve a First in my Degree.
             After this I hope to work for a software or web development company for a few years, then I aim to come back to Abertay to acquire a Masters Degree in
             Ethical Hacking.
@@ -36,5 +36,5 @@ include("scripts/header.php");
     </div>
 
 <?php
-include("scripts/footer.php") ;
+include("footer.php");
 ?>

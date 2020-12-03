@@ -11,8 +11,9 @@
 
         <div class="st-col s4">
             <h4>About</h4>
-            <p><a class="st-text-black" href="../cmp306/about.php">About Me</a></p>
-            <p><a class="st-text-black" href="../cmp306/diagnose.php">Help</a></p>
+            <p><a class="st-text-black" href="/~1901368/cmp306/view/about.php">About Me</a></p>
+            <p><a class="st-text-black" href="/~1901368/cmp306/view/diagnose.php">Help</a></p>
+            <p><a class="st-text-black" href="/~1901368/cmp306/view/privacy_policy.php">Privacy Policy</a></p>
         </div>
 
         <div class="st-col s4 st-justify">
@@ -33,8 +34,32 @@
 
 <script>
     // Accordion
-    function courseblocks() {
-        var x = document.getElementById("courseblocks");
+    function block1() {
+        var x = document.getElementById("block1");
+        if (x.className.indexOf("st-show") == -1) {
+            x.className += " st-show";
+        } else {
+            x.className = x.className.replace(" st-show", "");
+        }
+    }
+    function block2() {
+        var x = document.getElementById("block2");
+        if (x.className.indexOf("st-show") == -1) {
+            x.className += " st-show";
+        } else {
+            x.className = x.className.replace(" st-show", "");
+        }
+    }
+    function block3() {
+        var x = document.getElementById("block3");
+        if (x.className.indexOf("st-show") == -1) {
+            x.className += " st-show";
+        } else {
+            x.className = x.className.replace(" st-show", "");
+        }
+    }
+    function block4() {
+        var x = document.getElementById("block4");
         if (x.className.indexOf("st-show") == -1) {
             x.className += " st-show";
         } else {

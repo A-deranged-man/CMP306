@@ -1,8 +1,6 @@
 <?php
-include("scripts/header.php");
+include("header.php");
 ?>
-
-
     <div id="main">
         <h4 class="st-xlarge st-text-grey" id="policy_notice_title">Privacy Policy Notice</h4>
 
@@ -135,5 +133,5 @@ include("scripts/header.php");
 </script>
 
 <?php
-include("scripts/footer.php");
+include("footer.php");
 ?>

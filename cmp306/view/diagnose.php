@@ -1,5 +1,5 @@
 <?php
-include("scripts/header.php");
+include("header.php");
 
 $browser=get_browser();
 
@@ -23,4 +23,4 @@ else{
     echo "</br>This is the $browser->browser_maker $browser->browser browser running on the $browser->platform"." Operating System</br>";
 }
 
-include("scripts/footer.php") ;
+include("footer.php");
