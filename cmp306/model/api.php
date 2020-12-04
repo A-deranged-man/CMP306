@@ -353,7 +353,29 @@
 
 	function getdbtemps(){
         global $conn;
-        $sql = "SELECT * from temprature WHERE dttm > (NOW() - INTERVAL 24 HOUR) ORDER BY `temprature`.`id` DESC";
-        $result = mysqli_query($conn, $sql);
-        return json_encode($result);
+        $stmt = mysqli_stmt_init($conn);
+        $sql = "SELECT temprature.message from temprature WHERE dttm > (NOW() - INTERVAL 24 HOUR) ORDER BY `temprature`.`id` ASC" ;
+        mysqli_stmt_prepare($stmt, $sql);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $rows = array();
+        while($r = mysqli_fetch_assoc($result)) {
+            $rows[] = $r;
+        }
+        return $rows;
+    }
+
+    function getdbtemptime(){
+        global $conn;
+        $stmt = mysqli_stmt_init($conn);
+        $sql = "SELECT TIME(temprature.dttm) AS time_part from temprature WHERE dttm > (NOW() - INTERVAL 24 HOUR) ORDER BY `temprature`.`id` ASC" ;
+        mysqli_stmt_prepare($stmt, $sql);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $rows = array();
+        while($r = mysqli_fetch_assoc($result)) {
+            $rows[] = $r;
+        }
+        return $rows;
+
     }

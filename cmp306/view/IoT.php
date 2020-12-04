@@ -15,7 +15,8 @@ include("../model/api.php");
             crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
         <!-- Personal Stylesheet & Icon -->
         <link href="/~1901368/cmp306/view/favicon.png" rel="icon">
@@ -28,6 +29,13 @@ include("../model/api.php");
                 });
             });
         </script>
+
+        <script>
+            setInterval(function(){
+                $('#my_div').load('/path/to/server/source');
+            }, 20000) /* time in milliseconds (ie 20 seconds)*/
+        </script>
+
 
         <script>
             function pageRedirect() {
@@ -88,27 +96,63 @@ include("../model/api.php");
                      <p>Date & time this temperature was taken on: {$messagedate}</p>
                      <p></p>
                      <p>Internal Temperature: {$messagetemps->Internal_Temprature}</p>
-                     <p>External Temperature: {$messagetemps->External_Temprature}</p>"
+                     <p>External Temperature: {$messagetemps->External_Temprature}</p><br>";
+
+                $tempstxt = getdbtemps();
+                for ($i=0, $len=count($tempstxt); $i<$len; $i++) {
+                    $tempsarray[] = json_decode($tempstxt[$i]["message"], true);
+                }
+
+                $temptimes=getdbtemptime();
+
+                $tempwithtimearray = array_map(function($temptimes,$tempsarray){
+
+                    return array_merge(isset($temptimes) ? $temptimes : array(), isset($tempsarray) ? $tempsarray : array());
+
+                },$temptimes,$tempsarray);
+
+
                 ?>
 
-               <canvas id="myChart"></canvas>
-                <script>
-                    var ctx = document.getElementById('myChart').getContext('2d');
-                    var chart = new Chart(ctx, {
-                        // The type of chart we want to create
-                        type: 'line',
 
-                        // The data for our dataset
-                        data: {
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                            datasets: [{
-                                label: 'My First dataset',
-                                backgroundColor: 'rgb(0, 0, 0)',
-                                borderColor: 'rgb(255, 99, 132)',
-                                data: [0, 10, 5, 2, 20, 30, 45]
-                            }]
-                        }}
+                <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Time', 'Internal Temperature', 'External Temperature'],
+
+                            <?php
+
+                            for ($i = 0, $iMax = count($tempwithtimearray); $i < $iMax; $i++) {
+                                echo"['{$tempwithtimearray[$i]["time_part"]}',
+                                {$tempwithtimearray[$i]["Internal_Temprature"]},
+                                {$tempwithtimearray[$i]["External_Temprature"]}],";
+                            }
+
+
+
+                            ?>]);
+
+                        var options = {
+                            title: 'ElectricImp Temperatures',
+                            curveType: 'function',
+                            legend: { position: 'bottom' }
+                        };
+
+                        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                        chart.draw(data, options);
+                    }
                 </script>
+
+
+
+
+
             </div>
         </div>
         </div>
