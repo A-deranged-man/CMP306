@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <!--
-Site designed by Dylan Baker
+Site designed by:
+Dylan Baker
 Libraries used from Bootstrap 4, W3.CSS, jQuery, Popper.js, Bootstrap JS, Google & Font Awesome.
 -->
-<html lang="en">
     <head>
         <title>DB Software</title>
 
@@ -140,8 +141,7 @@ else{
             <i class="fa fa-caret-down"></i>
         </a>
         <div id="block4" class="st-bar-block st-hide st-padding-large st-medium">
-            <a href="../#" class="st-bar-item st-button">TBA</a>
-            <a href="../#" class="st-bar-item st-button">TBA</a>
+            <a href="/~1901368/cmp306/view/scriptblog.php" class="st-bar-item st-button">Scripting Blog</a>
         </div>
         <br>
         <a href="../#" class="st-button st-block st-white st-left-align">Commentary</a>

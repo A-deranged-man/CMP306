@@ -32,7 +32,7 @@ include("../model/api.php");
 
         <script>
             setInterval(function(){
-                $('#my_div').load('/path/to/server/source');
+                $('#curve_chart').load('drawChart()');
             }, 20000) /* time in milliseconds (ie 20 seconds)*/
         </script>
 

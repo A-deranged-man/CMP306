@@ -61,7 +61,7 @@
         global $conn;
         $stmt = mysqli_stmt_init($conn);
         $sql = "SELECT item.item_id, item.item_page_id, item.title, item.short_description, 
-       item.image_id, image.image_name, image.image_alt FROM item, image WHERE item.image_id = image.image_id" ;
+       item.image_id, image.image_name, image.image_alt FROM item, image WHERE item.image_id = image.image_id ORDER BY item.item_id DESC" ;
         mysqli_stmt_prepare($stmt, $sql);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
