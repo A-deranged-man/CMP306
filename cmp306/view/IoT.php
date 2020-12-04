@@ -124,17 +124,12 @@ include("../model/api.php");
                     function drawChart() {
                         var data = google.visualization.arrayToDataTable([
                             ['Time', 'Internal Temperature', 'External Temperature'],
-
                             <?php
-
                             for ($i = 0, $iMax = count($tempwithtimearray); $i < $iMax; $i++) {
                                 echo"['{$tempwithtimearray[$i]["time_part"]}',
                                 {$tempwithtimearray[$i]["Internal_Temprature"]},
                                 {$tempwithtimearray[$i]["External_Temprature"]}],";
                             }
-
-
-
                             ?>]);
 
                         var options = {
