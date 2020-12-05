@@ -6,6 +6,27 @@ $qno = $_GET['qno'];
 $userid = $_SESSION['userid'];
 
 if($_SESSION["logged-in"] === "yes"){
+
+    $answertxt = getAnswers($qno);
+    $answer = json_decode($answertxt);
+    $answerC = count($answer);
+
+    if ($answerC>0){
+        $updatetxt = " <p>
+                    You cannot update a question that has been answered
+                </p>";
+    }
+    else{
+        $updatetxt = "<form class=\"form\" action=\"\" method=\"post\">
+                <p>
+                    <br>
+                    <input type=\"text\" name=\"question\" length=\"500\" placeholder=\"Type your question here\" required >
+                </p>
+                    <input class=\"btn btn-primary st-black st-text-white st-border-black\" type=\"submit\" name=\"submit\" value=\"Update you Question\">
+                </form>";
+    }
+
+
     if (isset($_POST['question'])) {
         $question = make_safe($_REQUEST['question']);
         $result = edit_question($question, $qno);
@@ -14,28 +35,22 @@ if($_SESSION["logged-in"] === "yes"){
         echo "<script type='text/javascript'>window.top.location='https://mayar.abertay.ac.uk/~1901368/cmp306/view/useraccount.php';</script>"; exit;
     }
     else{
-        echo ' 
-           <div class="st-xlarge st-text-grey">
+        echo "
+        <div class=\"st-xlarge st-text-grey\">
             Question & Answers
            </div>
             <br>
             
-            <div class="container">
+            <div class=\"container\">
 
-            <div class="list-group-item list-group-item-action bg-light text-dark ">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Update your Question:</h5>
+            <div class=\"list-group-item list-group-item-action bg-light text-dark \">
+                <div class=\"d-flex w-100 justify-content-between\">
+                    <h5 class=\"mb-1\">Update your Question:</h5>
                 </div>
-                <form class="form" action="" method="post">
-                <p>
-                    <br>
-                    <input type="text" name="question" length="500" placeholder="Type your question here" required >
-                </p>
-                    <input class="btn btn-primary st-black st-text-white st-border-black" type="submit" name="submit" value="Update you Question">
-                </form>
+                {$updatetxt}
             </div>
         </div>
-        <br>';
+        <br>";
     }
 }
 else{
@@ -82,5 +97,21 @@ for ($i = 0, $iMax = count($question); $i < $iMax; $i++) {
         ";
 }
 
+
+for ($i = 0, $iMax = count($answer); $i < $iMax; $i++) {
+    echo "     
+        <div class=\"container\">
+            <div class=\"list-group-item list-group-item-action bg-light text-dark \">
+                <div class=\"d-flex w-100 justify-content-between\">
+                    <h5 class=\"mb-3\">Answer: {$answer[$i]-> answer}</h5>
+                </div>
+                <p class=\"st-small\">Date Posted: {$answer[$i]-> ddtm}
+                <br>
+                Posted By: {$answer[$i]-> username}
+                </p>
+            </div>
+        </div>
+        <br>";
+}
 include("footer.php");
 
