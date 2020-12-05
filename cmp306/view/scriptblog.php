@@ -25,7 +25,27 @@ echo"<div class=\"container\">
                             <div class=\"btn-group d-flex\">
                                 <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" 
                                   onclick=\"location.href='rss.php'\">
-                                  More Information
+                                  Open RSS Feed
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>";
+
+echo "
+        <!-- Item Card 2 --> 
+        <div class=\"col-md-4\">
+            <div class=\"card mb-4 box-shadow\">
+                <img class=\"card-img-top\" src=\"images/BBCW.jpg\" alt=\"RSS Feed\">
+                <h5 class=\"card-title text-center\">BBC Weather Feed</h5>
+                <div class=\"card-body\">
+                    <p class=\"card-text\">This is a dynamic feed using XSLT to transform XML to HTML5</p>
+                        <div class=\"d-flex justify-content-between align-items-center\">
+                            <div class=\"btn-group d-flex\">
+                                <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" 
+                                  onclick=\"location.href='weather.php'\">
+                                  Open Weather Feed
                                 </button>
                             </div>
                         </div>
@@ -39,10 +59,5 @@ echo"            </div> <!-- row -->
 </div>";
 
 //This adds information from the file footer.php
-include("footer.php");
-
-
-
-
 include("footer.php");
 
