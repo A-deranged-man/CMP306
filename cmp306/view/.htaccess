@@ -1,0 +1,7 @@
+# Turn on the rewriting engine
+RewriteEngine On    
+
+# Change the URI - Note ton Abertay the first line is not needed
+# RewriteRule ^employees/?$ RESTQuestions.php [NC,L]
+RewriteRule ^GetAllQuestions.php/([0-9]+)?$ GetAllQuestions.php?id=$1 [NC,L]
+RewriteRule ^GetQuestion.php/([0-9]+)?$ GetQuestion.php?id=/$1?%{QUERY_STRING}

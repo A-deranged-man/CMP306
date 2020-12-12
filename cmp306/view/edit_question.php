@@ -20,9 +20,11 @@ if($_SESSION["logged-in"] === "yes"){
         $updatetxt = "<form class=\"form\" action=\"\" method=\"post\">
                 <p>
                     <br>
-                    <input type=\"text\" name=\"question\" length=\"500\" placeholder=\"Type your question here\" required >
+                    <input type=\"text\" name=\"question\" length=\"500\" 
+                    placeholder=\"Type your question here\" required >
                 </p>
-                    <input class=\"btn btn-primary st-black st-text-white st-border-black\" type=\"submit\" name=\"submit\" value=\"Update you Question\">
+                    <input class=\"btn btn-primary st-black st-text-white st-border-black\" 
+                    type=\"submit\" name=\"submit\" value=\"Update you Question\">
                 </form>";
     }
 

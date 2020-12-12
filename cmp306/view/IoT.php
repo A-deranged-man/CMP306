@@ -50,7 +50,7 @@ include("../model/api.php");
     </style>
     <div data-role="page" id="home" data-title="DB Software">
         <div class="title" data-role="header">
-            <h1 class="st-xlarge st-text-grey"> jQuery Mobile Site with IoT Light and Temperatures</h1>
+            <h1 class="st-xlarge st-text-grey">IoT Light and Temperatures using JQM</h1>
         </div>
 
         <div data-role="content">
@@ -153,7 +153,7 @@ include("../model/api.php");
         </div>
 
         <div data-role="footer" data-position="fixed">
-            <h4> Dylan Baker </h4>
+            <h4> Dylan Baker - 1901368</h4>
         </div>
     </div>
     </body>
